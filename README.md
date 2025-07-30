@@ -1,12 +1,71 @@
-# React + Vite
+# Drawing Bot 🎨
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a smart drawing assistant powered by GPT.
 
-Currently, two official plugins are available:
+Just type something like:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> “Draw a tree next to a house with the sun above”
 
-## Expanding the ESLint configuration
+And it will create a simple sketch using basic shapes like circles, rectangles, and lines.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🧠 What it does
+- Turns English prompts into schematic drawings
+- Uses GPT to understand and generate drawing instructions
+- Draws shapes on canvas with correct placement
+- Remembers what was already drawn (no duplicates)
+- Supports undo / redo / clear / save / load (per user)
+
+---
+
+## ▶️ How to run
+
+1. Clone the project
+This will download the full project to your machine.
+
+bash
+Copy
+Edit
+git clone https://github.com/LeaLasker/drawing-bot-clean.git
+cd drawing-bot-clean
+
+2. Start the client (React)
+This runs the frontend on http://localhost:5173
+
+bash
+Copy
+Edit
+cd drawing-bot-client
+npm install
+npm run dev
+
+3. Start the server (ASP.NET Core)
+This runs the backend API on http://localhost:5203
+
+bash
+Copy
+Edit
+cd server
+dotnet run
+Make sure you have the .NET SDK installed.
+
+🔐 OpenAI API Key
+This project does not include an API key.
+To add yours, create a file:
+
+plaintext
+Copy
+Edit
+server/appsettings.json
+With this content:
+
+json
+Copy
+Edit
+{
+  "OpenAI": {
+    "ApiKey": "your-openai-api-key-here"
+  }
+}
+You can get a key at: https://platform.openai.com/api-keys
